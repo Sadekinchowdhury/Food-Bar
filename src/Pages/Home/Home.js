@@ -1,10 +1,16 @@
 import React from 'react';
+import Card from './card/Card';
+
+import Slider from './Slider/Slider';
 
 const Home = () => {
     return (
+
         <div>
-            <h1>home</h1>
+            <Slider></Slider>
+            <Card></Card>
         </div>
+
     );
 };
 

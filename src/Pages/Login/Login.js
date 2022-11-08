@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { GoogleAuthProvider } from 'firebase/auth'
 import { AuthContext } from '../../Context/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const Gprovider = new GoogleAuthProvider()
@@ -47,16 +48,10 @@ const Login = () => {
 
         <div className="hero bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
-                    <h1></h1>
-                </div>
+
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handlLogin}>
                         <div className="card-body">
-
-
-
-
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -77,7 +72,9 @@ const Login = () => {
                                     placeholder="password" className="input input-bordered" />
 
                             </div>
-
+                            <div>
+                                <p>already have an acount plz <Link to='/signup'><span className='text-xl text-orange-500'>SignUp</span></Link> </p>
+                            </div>
 
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>

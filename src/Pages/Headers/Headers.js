@@ -6,6 +6,8 @@ const Headers = () => {
     const menubar = <>
         <li>
             <Link className='font-semibold' to={'/'}>Home</Link>
+            <Link className='font-semibold' to={'/service'}>Services</Link>
+
             <Link className='font-semibold' to={'/login'}>Login</Link>
             <Link className='font-semibold' to={'/signup'}>SignUp</Link>
 
