@@ -24,18 +24,33 @@ const Review = () => {
 
 
     }, [])
+
+
     return (
-        <div>
-            {
-                userrivew.map(rivew => <RevieItem
 
-                    key={rivew._key}
-                    rivew={rivew}
-                >
+        <div className="overflow-x-auto w-full">
+            <table className="table w-full">
 
-                </RevieItem>)
-            }
+
+                <tbody>
+
+                    {
+
+                        userrivew.map(rivew => <RevieItem
+
+                            key={rivew._key}
+                            rivew={rivew}
+
+                        >
+
+                        </RevieItem>)
+                    }
+
+                </tbody>
+            </table>
         </div>
+
+
     );
 };
 

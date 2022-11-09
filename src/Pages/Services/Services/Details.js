@@ -68,7 +68,7 @@ const Details = () => {
                     <p className=' font-semibold text-orange-600'>Retings: {ratings}</p>
 
                 </div>
-                <div>
+                <div className="mt-4">
                     <h1 className="text-center">add a review</h1>
 
                     <form onSubmit={handleriview}>

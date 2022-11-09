@@ -5,6 +5,7 @@ import Main from '../Laout/Main';
 
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
+import Myreview from '../Pages/Myreview/Myreview';
 import Service from '../Pages/Service/Service';
 import Details from '../Pages/Services/Services/Details';
 import Services from '../Pages/Services/Services/Services';
@@ -42,6 +43,9 @@ const routes = createBrowserRouter([
             }, {
                 path: '/serviceAdd',
                 element: <Service></Service>
+            }, {
+                path: '/review',
+                element: <PrivetRout><Myreview></Myreview></PrivetRout>
             }
 
 

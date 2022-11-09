@@ -22,6 +22,7 @@ const Headers = () => {
             <Link className='font-semibold' to={'/'}>Home</Link>
             <Link className='font-semibold' to={'/service'}>Services</Link>
             <Link className='font-semibold' to={'/serviceAdd'}>Add Services</Link>
+            <Link className='font-semibold' to={'/review'}>My review</Link>
 
         </li></>
     const men = <>

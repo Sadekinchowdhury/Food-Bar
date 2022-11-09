@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CardItem = ({ serv }) => {
     console.log(serv)
-    const { img, name, price, description } = serv
+    const { img, name, price, description, _id } = serv
 
     function openFullscreen() {
         document.getElementById('image')?.requestFullscreen()
@@ -19,7 +20,9 @@ const CardItem = ({ serv }) => {
                     <p className='text-xl font-semibold text-orange-600'>price: ${price}</p>
                     <p>{description.length > 100 ? description.slice(0, 100) + '...see more' : description}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <div className="card-actions justify-end">
+                            <button className="btn btn-primary"><Link to={`/service/${serv._id}`}>Details</Link></button>
+                        </div>
                     </div>
                 </div>
             </div>

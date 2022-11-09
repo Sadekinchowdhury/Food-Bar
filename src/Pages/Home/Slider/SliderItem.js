@@ -5,7 +5,7 @@ const SliderItem = ({ slide }) => {
     const { image, id, prev, next } = slide
 
     return (
-        <div className="carousel-item relative w-full  py-2 mx-20">
+        <div className="carousel-item relative w-full   py-2 mx-20">
             <div id={`slide${id}`} className="carousel-item relative w-full">
                 <div className='carosel-img'>
                     < img src={image} alt='' className="w-full h-full" />
