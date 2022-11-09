@@ -13,7 +13,7 @@ export const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [Loading, setLoading] = useState(true)
 
 
     // google sigin
@@ -64,8 +64,8 @@ const AuthProvider = ({ children }) => {
         LogInuser,
         LogOut,
         userUpdate,
-        loading,
-        loading,
+        Loading,
+
 
 
     }

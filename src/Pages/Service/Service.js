@@ -1,6 +1,8 @@
 import React from 'react';
+import UseTitle from '../../Hooks/UseTitle';
 
 const Service = () => {
+    UseTitle('service')
 
     const handlerivi = event => {
 

@@ -5,37 +5,36 @@ import RevieItem from './RevieItem';
 
 const Review = () => {
     const { user } = useContext(AuthContext)
+
     const review = useLoaderData()
-    const [loading, setloading] = useState(true)
-    const [userrivew, setuserrivew] = useState({})
+
+    const [userrivew, setuserrivew] = useState([])
+
+
     useEffect(() => {
 
         fetch(`http://localhost:5000/users/${review._id}`)
             .then(res => res.json())
             .then(data => {
+                setuserrivew(data)
                 console.log(data)
-                setloading(false)
 
 
             })
 
 
-    }, [user?.email])
+    }, [])
     return (
         <div>
+            {
+                userrivew.map(rivew => <RevieItem
 
-            {/* {
-                userrivew.map(set => <RevieItem
-
-
-                    key={set._id}
-                    set={set}
-
+                    key={rivew._key}
+                    rivew={rivew}
                 >
 
-                </RevieItem>) */}
-
-            {/* } */}
+                </RevieItem>)
+            }
         </div>
     );
 };

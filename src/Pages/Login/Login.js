@@ -3,11 +3,15 @@ import { useLocation, useNavigate } from 'react-router';
 import { GoogleAuthProvider } from 'firebase/auth'
 import { AuthContext } from '../../Context/AuthProvider';
 import { Link } from 'react-router-dom';
+import UseTitle from '../../Hooks/UseTitle';
 
 const Login = () => {
     const Gprovider = new GoogleAuthProvider()
 
-    const { LogInuser, loading, googleSignin } = useContext(AuthContext)
+
+    UseTitle('login')
+
+    const { LogInuser, Loading, googleSignin } = useContext(AuthContext)
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -28,7 +32,7 @@ const Login = () => {
                 console.log(user)
 
                 navigate(from, { from: true })
-                loading(false)
+                Loading(false)
             })
             .catch(error => console.error('error', error))
 
