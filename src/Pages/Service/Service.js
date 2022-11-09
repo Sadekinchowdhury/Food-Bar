@@ -21,7 +21,7 @@ const Service = () => {
 
 
         }
-        console.log(users)
+
         fetch('http://localhost:5000/service', {
             method: 'POST',
             headers: {
@@ -34,7 +34,7 @@ const Service = () => {
                 if (data.acknowledged) {
                     alert('you have addes succesfuly')
                 }
-                console.log(data)
+
             })
 
     }

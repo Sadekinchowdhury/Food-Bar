@@ -7,13 +7,13 @@ const Review = () => {
     const { user } = useContext(AuthContext)
     const review = useLoaderData()
     const [loading, setloading] = useState(true)
-    const [userrivew, setuserrivew] = useState([review])
+    const [userrivew, setuserrivew] = useState({})
     useEffect(() => {
 
-        fetch('http://localhost:5000/users')
+        fetch(`http://localhost:5000/users/${review._id}`)
             .then(res => res.json())
             .then(data => {
-                setuserrivew(data)
+                console.log(data)
                 setloading(false)
 
 
@@ -23,7 +23,8 @@ const Review = () => {
     }, [user?.email])
     return (
         <div>
-            {
+
+            {/* {
                 userrivew.map(set => <RevieItem
 
 
@@ -32,9 +33,9 @@ const Review = () => {
 
                 >
 
-                </RevieItem>)
+                </RevieItem>) */}
 
-            }
+            {/* } */}
         </div>
     );
 };

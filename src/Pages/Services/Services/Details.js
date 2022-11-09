@@ -11,8 +11,8 @@ const Details = () => {
     const { user } = useContext(AuthContext)
 
     const details = useLoaderData()
-    console.log(details)
-    const { category, name, description, price, ratings, seller, shiping, stock, img } = details
+
+    const { category, name, description, price, ratings, seller, shiping, stock, img, _id } = details
 
 
     const handleriview = event => {
@@ -20,17 +20,19 @@ const Details = () => {
         event.preventDefault()
         const form = event.target;
         const text = form.text.value;
-        console.log(text)
+
 
         const Users = {
 
             email: user?.email,
+            categori: _id,
             user_pic: user?.photoURL,
-            username: user?.name,
+            username: user?.displayName,
             food_name: name,
             img: img,
             RevieW: text
         }
+        console.log(Users)
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -42,7 +44,7 @@ const Details = () => {
             .then(data => {
                 if (data.acknowledged) {
                     alert('succesfully added')
-
+                    console.log(data)
                 }
 
             })
@@ -71,7 +73,7 @@ const Details = () => {
                     <form onSubmit={handleriview}>
                         <div className="align-middle py-6 ">
                             <textarea className="textarea w-full textarea-info" type="text" name="text" placeholder="Bio"></textarea>
-                            <button className="btn btn-primary">Add review</button>
+                            <button className="btn btn-primary"> add rview</button>
                         </div>
 
                     </form>
