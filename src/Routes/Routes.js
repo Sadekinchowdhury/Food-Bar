@@ -3,8 +3,10 @@ import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Laout/Main';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
+import Details from '../Pages/Services/Services/Details';
 import Services from '../Pages/Services/Services/Services';
 import SignUp from '../Pages/SignUp/SignUp';
+import PrivetRout from './PrivetRoutes';
 
 
 const routes = createBrowserRouter([
@@ -27,7 +29,13 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/service',
-                element: <Services></Services>
+                element: <Services></Services>,
+                loader: () => fetch('http://localhost:5000/service')
+            }, {
+                path: '/service/:id',
+                element: <PrivetRout><Details></Details></PrivetRout>,
+                loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`)
+
             }
 
         ]

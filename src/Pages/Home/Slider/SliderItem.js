@@ -5,18 +5,18 @@ const SliderItem = ({ slide }) => {
     const { image, id, prev, next } = slide
 
     return (
-        <div className="carousel-item relative w-full py-2 mx-20">
+        <div className="carousel-item relative w-full  py-2 mx-20">
             <div id={`slide${id}`} className="carousel-item relative w-full">
                 <div className='carosel-img'>
-                    < img src={image} alt='' className="w-full " />
+                    < img src={image} alt='' className="w-full h-full" />
                 </div>
 
                 <div className="absolute flex  transform -translate-y-1/2 top-1/3 w-1/3 left-24 ">
-                    <h1 className='text-6xl text-white font-bold' >this is car garrage</h1>
+                    <h1 className='text-6xl text-white font-bold' > foodbar all item here</h1>
                 </div>
 
                 <div className="absolute flex  transform -translate-y-1/2    top-1/2 w-1/3 left-24 ">
-                    <p className='text-white'>this is car gis; amr sunar bangla ami tumey vlaoibasi</p>
+                    <p className='text-white'> you can check all food </p>
                 </div>
 
 

@@ -1,19 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom'
+import { Image } from 'react-bootstrap';
+import { AuthContext } from '../../Context/AuthProvider';
 
 
 const Headers = () => {
+    const { user, LogOut } = useContext(AuthContext)
+
+    const handLogout = () => {
+        LogOut()
+            .then(result => {
+                const user = result.user
+                console.log(user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
     const menubar = <>
         <li>
             <Link className='font-semibold' to={'/'}>Home</Link>
             <Link className='font-semibold' to={'/service'}>Services</Link>
-
-            <Link className='font-semibold' to={'/login'}>Login</Link>
-            <Link className='font-semibold' to={'/signup'}>SignUp</Link>
-
-
+        </li></>
+    const men = <>
+        <li>
 
         </li></>
+
+
     return (
         <div className='bg-red-600'>
             <div className='align-middle'>
@@ -25,6 +39,15 @@ const Headers = () => {
                             </label>
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 {menubar}
+                                {!user?.uid ||
+
+                                    <>
+                                        <Link className='font-semibold ml-8' to={'/login'}>Login</Link>
+
+                                        <Link className='font-semibold' to={'/signup'}>SignUp</Link>
+                                    </>
+
+                                }
                             </ul>
                         </div>
                         <div>
@@ -35,17 +58,56 @@ const Headers = () => {
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal p-0">
                             {menubar}
+                            <li>
+                                {
+                                    user?.uid ? <>
+
+
+                                        <Link>
+
+                                            {/* <button onClick={handLogout} className='bg-primary rounded-2 w-100 h-50'>Log out</button> */}
+
+                                            <button onClick={handLogout} className="btn btn-outline">LogOut</button>
+                                        </Link>
+                                        {
+
+                                            <Link>
+
+                                                <Image
+                                                    title={user?.displayName}
+                                                    src={user?.photoURL
+                                                    }
+                                                    className='h-4 ml-4 rounded-full'
+
+
+                                                ></Image>
+
+                                            </Link>
+                                        }
+
+                                    </>
+                                        :
+                                        <>
+                                            <Link className='font-semibold ml-8' to={'/login'}>Login</Link>
+
+                                            <Link className='font-semibold' to={'/signup'}>SignUp</Link>
+                                        </>
+                                }
+
+
+                            </li>
                         </ul>
-                    </div>
-                    <div className="navbar-end">
-                        <button className="btn btn-outline btn-secondary">Get started</button>
                     </div>
                     <div className="navbar-end">
 
                     </div>
+                    <div className="navbar-end">
+
+
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

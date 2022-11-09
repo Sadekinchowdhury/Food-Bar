@@ -3,26 +3,40 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const SignUp = () => {
-    const { creatUser } = useContext(AuthContext)
+    const { creatUser, userUpdate } = useContext(AuthContext)
 
     const handlRegister = event => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
+        const photoURL = form.photoURL.value;
         const password = form.password.value;
         const name = form.name.value;
-        console.log(email, password, name)
+        console.log(email, password, name, photoURL)
         creatUser(email, password)
             .then(result => {
                 const user = result.user;
+                form.reset()
+                UpdatProfile(name, photoURL)
                 console.log(user)
             })
             .catch(error => console.error('error', error))
+    }
+    const UpdatProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        userUpdate(profile)
+            .then(() => {
 
+            })
+            .catch(error => {
+                console.error(error)
 
+            })
 
     }
-
     return (
         <div className="hero bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -41,6 +55,15 @@ const SignUp = () => {
                                 <input type="text" name='name'
                                     required
                                     placeholder="UserName" className="input input-bordered" />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">photoURL</span>
+                                </label>
+                                <input type="text" name='photoURL'
+                                    required
+                                    placeholder="photoURL" className="input input-bordered" />
                             </div>
 
                             <div className="form-control">

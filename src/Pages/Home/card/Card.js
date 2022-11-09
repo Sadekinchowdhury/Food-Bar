@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import CardItem from './CardItem';
 
 const Card = () => {
@@ -21,7 +22,7 @@ const Card = () => {
                 {
                     servic.map(serv =>
                         <CardItem
-                            key={serv._key}
+                            key={serv._id}
                             serv={serv}
                         >
 
@@ -36,7 +37,7 @@ const Card = () => {
 
             <div className='text-center
             py-6'>
-                <button className="btn btn-outline btn-info px-5"><p className='text-black'>Info</p></button>
+                <Link to="/service"> <button className="btn btn-outline btn-info px-5"><p className='text-black'>see more</p></button></Link>
             </div>
         </div>
     );
