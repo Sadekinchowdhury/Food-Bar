@@ -21,6 +21,8 @@ const Headers = () => {
         <li>
             <Link className='font-semibold' to={'/'}>Home</Link>
             <Link className='font-semibold' to={'/service'}>Services</Link>
+            <Link className='font-semibold' to={'/serviceAdd'}>Add Services</Link>
+
         </li></>
     const men = <>
         <li>
@@ -39,25 +41,63 @@ const Headers = () => {
                             </label>
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 {menubar}
-                                {!user?.uid ||
+                                <li>
 
-                                    <>
-                                        <Link className='font-semibold ml-8' to={'/login'}>Login</Link>
+                                    <li>
+                                        {
+                                            user?.uid ? <>
 
-                                        <Link className='font-semibold' to={'/signup'}>SignUp</Link>
-                                    </>
 
-                                }
+                                                <Link>
+
+                                                    {/* <button onClick={handLogout} className='bg-primary rounded-2 w-100 h-50'>Log out</button> */}
+
+                                                    <button onClick={handLogout} className="btn btn-outline">LogOut</button>
+                                                </Link>
+                                                {
+
+                                                    <Link>
+
+                                                        <Image
+                                                            title={user?.displayName}
+                                                            src={user?.photoURL
+                                                            }
+                                                            className='h-4 ml-4 rounded-full'
+
+
+                                                        ></Image>
+
+                                                    </Link>
+                                                }
+
+                                            </>
+                                                :
+                                                <>
+                                                    <Link className='font-semibold ml-8' to={'/login'}>Login</Link>
+
+                                                    <Link className='font-semibold' to={'/signup'}>SignUp</Link>
+                                                </>
+                                        }
+
+
+                                    </li>
+                                </li>
                             </ul>
                         </div>
+                        <div className='flex'>
+                            <div>
+                                <Link to={'/'} className="btn btn-ghost normal-case text-xl"><img className='h-6 w-6' src='https://pic.onlinewebfonts.com/svg/img_415179.png' /></Link>
+                            </div>
+
+                        </div>
                         <div>
-                            <Link to={'/'} className="btn btn-ghost normal-case text-xl"><img className='h-6 w-6' src='https://pic.onlinewebfonts.com/svg/img_415179.png' /></Link>
-                            <Link className='btn-ghost text-3xl text-orange-600 font-bold'>Food-Bar</Link>
+                            <Link className='btn-ghost text-block text-2xl text-orange-600 font-bold'>Food-Bar</Link>
                         </div>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal p-0">
                             {menubar}
+
                             <li>
                                 {
                                     user?.uid ? <>
