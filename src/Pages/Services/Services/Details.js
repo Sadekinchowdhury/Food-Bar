@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
 import Review from "../../reveiw/Review";
 
 const Details = () => {
+
+
+
     const { user } = useContext(AuthContext)
 
     const details = useLoaderData()
@@ -37,7 +40,11 @@ const Details = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                if (data.acknowledged) {
+                    alert('succesfully added')
+
+                }
+
             })
 
 

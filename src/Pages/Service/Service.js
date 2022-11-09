@@ -31,6 +31,9 @@ const Service = () => {
         })
             .then(res => res.json())
             .then(data => {
+                if (data.acknowledged) {
+                    alert('you have addes succesfuly')
+                }
                 console.log(data)
             })
 
