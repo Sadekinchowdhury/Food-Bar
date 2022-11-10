@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
-import { AuthContext } from '../../Context/AuthProvider';
+
 import RevieItem from './RevieItem';
 
 const Review = () => {
-    const { user } = useContext(AuthContext)
 
     const review = useLoaderData()
 
-    const [userrivew, setuserrivew] = useState([])
+    const [UserRivew, setuserrivew] = useState([])
 
 
     useEffect(() => {
@@ -23,7 +22,7 @@ const Review = () => {
             })
 
 
-    }, [userrivew])
+    }, [UserRivew])
 
 
     return (
@@ -36,7 +35,7 @@ const Review = () => {
 
                     {
 
-                        userrivew.map(rivew => <RevieItem
+                        UserRivew.map(rivew => <RevieItem
 
                             key={rivew._key}
                             rivew={rivew}

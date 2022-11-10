@@ -1,19 +1,22 @@
-import React, { useContext, useState } from "react";
-import { useLoaderData, useNavigate } from "react-router";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+import 'react-photo-view/dist/react-photo-view.css';
+import { useLoaderData } from "react-router";
+
 import { AuthContext } from "../../../Context/AuthProvider";
 import UseTitle from "../../../Hooks/UseTitle";
 import Review from "../../reveiw/Review";
 
 const Details = () => {
-    const naviget = useNavigate()
+
     UseTitle('details')
 
     const { user } = useContext(AuthContext)
 
     const details = useLoaderData()
 
-    const { category, name, description, price, ratings, seller, shiping, stock, img, _id } = details
+    const { name, description, price, ratings, seller, stock, img, _id } = details
 
 
     const handleriview = event => {
@@ -47,15 +50,20 @@ const Details = () => {
 
             })
 
-
-
-
     }
 
     return (
         <div>
             <div className="card  bg-base-100 shadow-xl border-x-2">
-                <figure><img src={img} alt="Shoes" /></figure>
+                <figure>
+                    <PhotoProvider>
+                        <PhotoView src="/1.jpg">
+                            <img src={img} alt="Shoes" />
+                        </PhotoView>
+                    </PhotoProvider>
+
+
+                </figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p className='text-xl font-semibold text-orange-600'>price: ${price}</p>

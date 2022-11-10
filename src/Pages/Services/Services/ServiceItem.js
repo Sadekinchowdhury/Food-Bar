@@ -1,16 +1,28 @@
 import React from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
-import { FullScreen, useFullScreenHandle } from "react-full-screen";
+
 
 const ServiceItem = ({ fod }) => {
     const { img, name, price, description, _id } = fod
 
-    const handle = useFullScreenHandle();
+
     return (
         <div className='py-5'>
 
             <div className="card  bg-base-100 shadow-xl border-x-2">
-                <figure><img onClick={handle.enter} className='h-96' src={img} alt="Shoes" /></figure>
+                <figure>
+                    <PhotoProvider>
+                        <PhotoView src={img}>
+                            <img className='h-96' src={img} alt="Shoes" />
+                        </PhotoView>
+                    </PhotoProvider>
+
+
+
+
+                </figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p className='text-xl font-semibold text-orange-600'>price: ${price}</p>
