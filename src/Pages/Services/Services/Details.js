@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
 import UseTitle from "../../../Hooks/UseTitle";
 import Review from "../../reveiw/Review";
 
 const Details = () => {
-
+    const naviget = useNavigate()
     UseTitle('details')
 
     const { user } = useContext(AuthContext)
@@ -43,10 +43,19 @@ const Details = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.acknowledged) {
-                    alert('succesfully added')
-                    console.log(data)
+                if (!user.email) {
+                    alert('success fuly addeed')
+
                 }
+                else {
+                    alert('prease login ')
+
+                }
+                return;
+                // if (data.acknowledged) {
+                //     alert('succesfully added')
+                //     console.log(data)
+                // }
 
             })
 

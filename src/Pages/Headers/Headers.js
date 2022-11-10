@@ -21,8 +21,7 @@ const Headers = () => {
         <li>
             <Link className='font-semibold' to={'/'}>Home</Link>
             <Link className='font-semibold' to={'/service'}>Services</Link>
-            <Link className='font-semibold' to={'/serviceAdd'}>Add Services</Link>
-            <Link className='font-semibold' to={'/review'}>My review</Link>
+
 
         </li></>
     const men = <>
@@ -40,7 +39,7 @@ const Headers = () => {
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </label>
-                            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 {menubar}
                                 <li>
 
@@ -48,11 +47,9 @@ const Headers = () => {
                                         {
                                             user?.uid ? <>
 
-
+                                                <Link className='font-semibold' to={'/serviceAdd'}>Add Services</Link>
+                                                <Link className='font-semibold' to={'/review'}>My review</Link>
                                                 <Link>
-
-                                                    {/* <button onClick={handLogout} className='bg-primary rounded-2 w-100 h-50'>Log out</button> */}
-
                                                     <button onClick={handLogout} className="btn btn-outline">LogOut</button>
                                                 </Link>
                                                 {
@@ -77,6 +74,7 @@ const Headers = () => {
                                                     <Link className='font-semibold ml-8' to={'/login'}>Login</Link>
 
                                                     <Link className='font-semibold' to={'/signup'}>SignUp</Link>
+
                                                 </>
                                         }
 
@@ -92,7 +90,7 @@ const Headers = () => {
 
                         </div>
                         <div>
-                            <Link className='btn-ghost text-block text-2xl text-orange-600 font-bold'>Food-Bar</Link>
+                            <Link className='btn-ghost inline-block text-block text-1xl text-orange-600 font-bold'>Food-Bar</Link>
                         </div>
                     </div>
                     <div className="navbar-center hidden lg:flex">
@@ -103,10 +101,10 @@ const Headers = () => {
                                 {
                                     user?.uid ? <>
 
-
+                                        <Link className='font-semibold' to={'/serviceAdd'}>Add Services</Link>
+                                        <Link className='font-semibold' to={'/review'}>My review</Link>
                                         <Link>
 
-                                            {/* <button onClick={handLogout} className='bg-primary rounded-2 w-100 h-50'>Log out</button> */}
 
                                             <button onClick={handLogout} className="btn btn-outline">LogOut</button>
                                         </Link>

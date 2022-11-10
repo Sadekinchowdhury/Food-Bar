@@ -18,12 +18,12 @@ const Myreview = () => {
     }, [user?.email])
 
 
-    const handlDelete = id => {
+    const handlDelete = categori => {
         const procees = window.confirm('are you sure to delete')
 
         if (procees) {
 
-            fetch(`http://localhost:5000/users/${id}`, {
+            fetch(`http://localhost:5000/users/${categori}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
