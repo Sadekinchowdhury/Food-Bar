@@ -43,7 +43,7 @@ const Myreview = () => {
                         alert('deleted succesfully')
 
                         const remainng = review.filter(rev => rev._id !== id);
-                        setReview(remainng)
+                        setReview(review)
                     }
 
                 })

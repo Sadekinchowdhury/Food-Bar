@@ -12,7 +12,7 @@ const Review = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/users/${review._id}`)
+        fetch(`https://food-bars-sadekinchowdhury.vercel.app/users/${review._id}`)
             .then(res => res.json())
             .then(data => {
                 setuserrivew(data)

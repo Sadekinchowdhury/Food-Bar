@@ -35,11 +35,11 @@ const routes = createBrowserRouter([
             {
                 path: '/service',
                 element: <Services></Services>,
-                loader: () => fetch('http://localhost:5000/service')
+                loader: () => fetch('https://food-bars-sadekinchowdhury.vercel.app/service')
             }, {
                 path: '/service/:id',
                 element: <Details></Details>,
-                loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`)
+                loader: ({ params }) => fetch(`https://food-bars-sadekinchowdhury.vercel.app/service/${params.id}`)
 
             }, {
                 path: '/serviceAdd',

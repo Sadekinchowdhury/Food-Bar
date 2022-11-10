@@ -37,7 +37,7 @@ const Details = () => {
             RevieW: text
         }
         console.log(Users)
-        fetch('http://localhost:5000/users', {
+        fetch('https://food-bars-sadekinchowdhury.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

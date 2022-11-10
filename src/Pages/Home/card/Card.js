@@ -6,7 +6,7 @@ const Card = () => {
     const [servic, setServic] = useState([])
     useEffect(() => {
 
-        fetch('http://localhost:5000/home')
+        fetch('https://food-bars-sadekinchowdhury.vercel.app/home')
             .then(res => res.json())
             .then(data => setServic(data))
 
