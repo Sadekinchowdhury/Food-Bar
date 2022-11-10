@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Laout/Main';
+import Blog from '../Pages/Blog/Blog';
 
 
 import Home from '../Pages/Home/Home';
@@ -46,6 +47,10 @@ const routes = createBrowserRouter([
             }, {
                 path: '/review',
                 element: <PrivetRout><Myreview></Myreview></PrivetRout>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
 
 

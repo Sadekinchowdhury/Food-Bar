@@ -24,10 +24,7 @@ const Headers = () => {
 
 
         </li></>
-    const men = <>
-        <li>
 
-        </li></>
 
 
     return (
@@ -41,7 +38,9 @@ const Headers = () => {
                             </label>
                             <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 {menubar}
+
                                 <li>
+
 
                                     <li>
                                         {
@@ -97,7 +96,12 @@ const Headers = () => {
                         <ul className="menu menu-horizontal p-0">
                             {menubar}
 
+
                             <li>
+
+                                <li>
+                                    <Link className='font-semibold ' to={'/blog'}>Blog</Link>
+                                </li>
                                 {
                                     user?.uid ? <>
 
