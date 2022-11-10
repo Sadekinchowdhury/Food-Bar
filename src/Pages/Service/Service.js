@@ -46,7 +46,7 @@ const Service = () => {
         <div className="hero bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
 
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card   w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handlerivi}>
                         <div className="card-body">
 
@@ -87,7 +87,7 @@ const Service = () => {
                                 <textarea className='border-4' name="description" placeholder='description' id="" cols="30" rows="10"></textarea>
                             </div>
 
-                            <button className="btn btn-accent">Button</button>
+                            <button className="btn btn-accent">Add Service</button>
 
                         </div>
 

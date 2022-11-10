@@ -89,7 +89,7 @@ const Headers = () => {
 
                         </div>
                         <div>
-                            <Link className='btn-ghost inline-block text-block text-1xl text-orange-600 font-bold'>Food-Bar</Link>
+                            <Link className='btn-ghost inline-block text-block text-3xl text-orange-600 font-bold'>Food-Bar</Link>
                         </div>
                     </div>
                     <div className="navbar-center hidden lg:flex">
@@ -141,13 +141,13 @@ const Headers = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="navbar-end">
-
+                    {/* <div className="navbar-end">
+                        <h1>amra</h1>
                     </div>
                     <div className="navbar-end">
 
 
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div >

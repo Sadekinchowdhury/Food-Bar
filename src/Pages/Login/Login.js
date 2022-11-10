@@ -28,11 +28,29 @@ const Login = () => {
         LogInuser(email, password)
             .then(result => {
                 const user = result.user;
-                form.reset()
-                console.log(user)
 
-                navigate(from, { from: true })
-                Loading(false)
+                const cureentuser = {
+                    email: user.email
+                }
+                // form.reset()
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(cureentuser)
+
+
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('food-token', data.token)
+
+                        navigate(from, { from: true })
+                        Loading(false)
+                    })
+
             })
             .catch(error => console.error('error', error))
 

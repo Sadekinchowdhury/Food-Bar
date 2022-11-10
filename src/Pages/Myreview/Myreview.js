@@ -5,29 +5,48 @@ import Myreviewadd from './Myreviewadd';
 
 const Myreview = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, LogOut } = useContext(AuthContext)
 
     const [review, setReview] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users?email=${user?.email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/users?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('food-token')}`
+            }
+
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    LogOut()
+                }
+
+                return res.json()
+            })
             .then(data => {
                 setReview(data)
             })
     }, [user?.email])
 
 
-    const handlDelete = categori => {
+    const handlDelete = id => {
         const procees = window.confirm('are you sure to delete')
 
         if (procees) {
 
-            fetch(`http://localhost:5000/users/${categori}`, {
+            fetch(`http://localhost:5000/users/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('deleted succesfully')
+
+                        const remainng = review.filter(rev => rev._id !== id);
+                        setReview(remainng)
+                    }
+
+                })
 
         }
 

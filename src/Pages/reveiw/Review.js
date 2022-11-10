@@ -23,7 +23,7 @@ const Review = () => {
             })
 
 
-    }, [])
+    }, [userrivew])
 
 
     return (

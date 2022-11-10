@@ -43,19 +43,7 @@ const Details = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (!user.email) {
-                    alert('success fuly addeed')
-
-                }
-                else {
-                    alert('prease login ')
-
-                }
-                return;
-                // if (data.acknowledged) {
-                //     alert('succesfully added')
-                //     console.log(data)
-                // }
+                console.log(data)
 
             })
 
