@@ -15,15 +15,15 @@ const Review = () => {
         fetch(`https://food-bars-sadekinchowdhury.vercel.app/users/${review._id}`)
             .then(res => res.json())
             .then(data => {
-
-                setuserrivew(data)
+                const datas = [...UserRivew, data]
+                setuserrivew(datas)
                 console.log(data)
 
 
             })
 
 
-    }, [review._id])
+    }, [review])
 
 
     return (
