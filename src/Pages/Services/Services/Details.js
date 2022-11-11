@@ -46,7 +46,7 @@ const Details = () => {
         })
             .then(res => res.json())
             .then(data => {
-                window.confirm('ok')
+                window.confirm('do yo add')
                 console.log(data)
 
             })
