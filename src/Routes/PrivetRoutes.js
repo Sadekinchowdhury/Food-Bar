@@ -6,9 +6,9 @@ import { AuthContext } from '../Context/AuthProvider';
 
 
 const PrivetRout = ({ children }) => {
-    const { user, loading } = useContext(AuthContext)
+    const { user, Loading } = useContext(AuthContext)
     const location = useLocation()
-    if (loading) {
+    if (Loading) {
         return <Spinner animation="border" role="status"></Spinner>
     }
 

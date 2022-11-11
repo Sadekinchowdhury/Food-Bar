@@ -2,11 +2,11 @@ import React from 'react';
 import { useContext } from 'react'
 import { AuthContext } from '../../Context/AuthProvider';
 
-const Myreviewadd = ({ rev, handlDelete }) => {
+const Myreviewadd = ({ rev, handlDelete, handlUpdate }) => {
     console.log(rev)
     const { user } = useContext(AuthContext)
 
-    const { categori, name, food_name, username, RevieW, _id } = rev;
+    const { categori, name, food_name, username, RevieW, _id, status } = rev;
     return (
 
 
@@ -36,6 +36,9 @@ const Myreviewadd = ({ rev, handlDelete }) => {
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                 </button>
                             </label>
+                        </th>
+                        <th>
+                            <button onClick={() => handlUpdate(_id)} className='btn-ghost'>{status ? status : 'pending'}</button>
                         </th>
                         <td>
                             <div className="flex items-center space-x-3">

@@ -4,7 +4,7 @@ const Hommid = () => {
     return (
         <div>
             <h1 className='  text-4xl text-orange-700 font-bold text-center'>Do you like fast food</h1>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero   bg-base-200">
 
 
 

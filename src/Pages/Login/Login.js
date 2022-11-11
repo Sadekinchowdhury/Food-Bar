@@ -4,6 +4,7 @@ import { GoogleAuthProvider } from 'firebase/auth'
 import { AuthContext } from '../../Context/AuthProvider';
 import { Link } from 'react-router-dom';
 import UseTitle from '../../Hooks/UseTitle';
+import { replace } from 'dom/lib/mutation';
 
 const Login = () => {
     const Gprovider = new GoogleAuthProvider()
@@ -11,7 +12,7 @@ const Login = () => {
 
     UseTitle('login')
 
-    const { LogInuser, Loading, googleSignin } = useContext(AuthContext)
+    const { LogInuser, setLoading, googleSignin } = useContext(AuthContext)
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -47,8 +48,8 @@ const Login = () => {
                         console.log(data)
                         localStorage.setItem('food-token', data.token)
 
-                        navigate(from, { from: true })
-                        Loading(false)
+                        navigate(from, { from: true }, replace)
+                        setLoading(false)
                     })
 
             })
