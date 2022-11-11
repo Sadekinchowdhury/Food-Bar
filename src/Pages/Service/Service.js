@@ -19,9 +19,8 @@ const Service = () => {
             name: name,
             img: img,
             price: price,
-            description: description
-
-
+            description: description,
+            date: new Date()
         }
 
         fetch('https://food-bars-sadekinchowdhury.vercel.app/service', {

@@ -70,7 +70,7 @@ const Myreview = () => {
                     const approving = review.find(rev => rev._id === id)
                     approving.status = 'Approved';
                     const newRevew = [approving, ...remainng];
-                    setReview(newRevew)
+                    setReview(newRevew);
                 }
 
                 console.log(data)

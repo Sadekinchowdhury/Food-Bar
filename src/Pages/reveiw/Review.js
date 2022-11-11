@@ -15,6 +15,7 @@ const Review = () => {
         fetch(`https://food-bars-sadekinchowdhury.vercel.app/users/${review._id}`)
             .then(res => res.json())
             .then(data => {
+
                 setuserrivew(data)
                 console.log(data)
 
@@ -22,7 +23,7 @@ const Review = () => {
             })
 
 
-    }, [review])
+    }, [review._id])
 
 
     return (
