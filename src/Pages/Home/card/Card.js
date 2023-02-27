@@ -12,9 +12,9 @@ const Card = () => {
 
     }, [])
     return (
-        <div>
+        <div className='py-10'>
             <div className='text-center mb-6'>
-                <h1 className='text-5xl text-orange-500 font-bold'>Welcome to the FoodBar</h1>
+                <h1 className='text-5xl text-orange-500 font-bold'>Hey Fooder</h1>
                 <p className='mt-3'>You can choose your best food.Click any food what you want to buy </p>
 
             </div>

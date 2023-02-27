@@ -34,16 +34,18 @@ const Slider = () => {
         }
     ]
     return (
-        <div className="carousel  py-10">
-            {
-                slider.map(slide => <SliderItem
-                    key={slide.id}
-                    slide={slide}
-                >
+        <div className='w-4/5 m-4 mx-auto'>
+            <div className="carousel w-full h-96 py-10">
+                {
+                    slider.map(slide => <SliderItem
+                        key={slide.id}
+                        slide={slide}
+                    >
 
-                </SliderItem>)
-            }
+                    </SliderItem>)
+                }
 
+            </div>
         </div>
     );
 };

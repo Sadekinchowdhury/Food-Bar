@@ -13,7 +13,7 @@ const CardItem = ({ serv }) => {
     openFullscreen()
 
     return (
-        <div className=''>
+        <div className='m-4'>
 
             <div className="card  bg-base-100 shadow-xl border-x-2">
                 <figure>
